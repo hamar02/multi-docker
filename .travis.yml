@@ -7,7 +7,7 @@ before_install:
     - docker build -t hamaro/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run hamaro/react-test npm test -- --cover
+    - docker run -e CI=true hamaro/react-test npm test
 
 after_success:
     - docker build -t hamaro/multi-client ./client
