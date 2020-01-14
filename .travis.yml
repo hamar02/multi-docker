@@ -16,6 +16,7 @@ after_success:
     - docker build -t hamaro/multi-worker ./worker
     
     # log in to the docker CLI
+    # get DOCKER_PASSWORD from travis environment variables and pass it in to the login command with stdin
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
     - docker push hamaro/multi-client
     - docker push hamaro/multi-nginx 
