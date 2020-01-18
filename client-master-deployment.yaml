@@ -1,15 +1,12 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+kind: Pod
 metadata:
   name: client-master
   labels:
-    app: client
-    role: master
-    tier: backend
-spec:
-  ports:
-  - port: 6379
-  selector:
-    app: client
-    role: master
-    tier: backend
+    component: web
+spec:  
+  containers:
+  - name: client
+    image: hamaro/multi-client
+    ports:
+    - containerPort: 3000
