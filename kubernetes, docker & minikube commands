@@ -1,0 +1,47 @@
+--------------
+KUBERNETES
+--------------
+kubectl get pod -o wide
+kubectl get service -o wide
+kubectl get deployment -o wide
+kubectl get pv -o wide                                              persistent volume
+kubectl get secrets -o wide
+
+kubectl describe pod
+kubectl describe service
+kubectl describe deployment
+
+kubectl delete pod name_of_object
+kubectl delete service name_of_object
+kubectl delete deployment name_of_object
+
+kubectl apply -f name_of_yaml_file.yaml
+kubectl apply -f name_of_folder_with_yaml_files
+kubectl delete -f name_of_yaml_filee.yaml
+kubectl delete -f name_of_folder_with_yaml_files
+
+kubectl create secret generic pgpassword --from-literal KEY=VALUE
+
+----------
+minikube
+----------
+minikube dashboard
+minikube ip
+
+----------
+DOCKER
+----------
+docker version
+docker system prune                                                 Deletes unused containers, networks and some other unused stuff
+docker login
+docker ps
+docker create container_id
+docker start container_id
+docker run container_id                                             Creates and starts a container
+docker logs container_id                                            Get the logs from the container in container_id
+docker exec -it container_id sh                                     Adds a shell to the container in container_id
+docker stop container_id
+docker kill container_id
+docker rm container_id
+docker build -t docker_username/build_name:build_version_name .
+docker push docker_username/build_name
