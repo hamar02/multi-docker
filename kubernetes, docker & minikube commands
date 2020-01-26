@@ -17,6 +17,8 @@ kubectl describe deployment
 kubectl delete pod name_of_object
 kubectl delete service name_of_object
 kubectl delete deployment name_of_object
+kubectl delete deployment --all
+
 
 kubectl apply -f name_of_yaml_file.yaml
 kubectl apply -f name_of_folder_with_yaml_files
