@@ -7,6 +7,9 @@ kubectl get deployment -o wide
 kubectl get pv -o wide                                              persistent volume
 kubectl get secrets -o wide
 
+kubectl get pods --namespace agones-system                          namespace can be used
+
+
 kubectl describe pod
 kubectl describe service
 kubectl describe deployment

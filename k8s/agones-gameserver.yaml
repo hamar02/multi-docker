@@ -1,0 +1,14 @@
+apiVersion: "agones.dev/v1"
+kind: GameServer
+metadata:
+  generateName: "ue4test"
+spec:
+  ports:
+  - name: default
+    portPolicy: Dynamic
+    containerPort: 7000
+  template:
+    spec:
+      containers:
+      - name: ue4test
+        image: hamaro/ue4
