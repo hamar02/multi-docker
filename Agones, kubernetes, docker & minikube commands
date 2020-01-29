@@ -1,3 +1,18 @@
+--------
+agones
+--------
+kubectl create namespace agones-system
+kubectl apply -f https://raw.githubusercontent.com/googleforgames/agones/release-1.3.0/install/yaml/install.yaml
+kubectl describe --namespace agones-system pods
+kubectl get pods --namespace agones-system
+kubectl create -f agones-gameserver.yaml
+kubectl logs ue4test-gameserver ue4test
+kubectl logs ue4test-gameserver agones-gameserver-sidecar
+kubectl get gameservers
+kubectl describe gameserver
+
+kubectl delete gs --all
+
 --------------
 KUBERNETES
 --------------
